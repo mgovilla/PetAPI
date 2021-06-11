@@ -1,0 +1,24 @@
+{
+  "name": "PetAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgovilla/PetAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mgovilla/PetAPI/issues"
+  },
+  "homepage": "https://github.com/mgovilla/PetAPI#readme",
+  "dependencies": {
+    "apollo-server": "^2.25.1",
+    "graphql": "^15.5.0"
+  }
+}
