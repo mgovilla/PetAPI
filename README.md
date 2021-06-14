@@ -4,6 +4,7 @@ Project to learn GraphQL by implementing the [PetStore API](https://petstore3.sw
 
 ## Dependencies
 npm install apollo-server graphql
+npm install --save-dev jest 
 
 ## Instructions to Run
 node src/index.js
