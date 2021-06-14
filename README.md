@@ -8,6 +8,7 @@ npm install --save-dev jest
 
 ## Instructions to Run
 node src/index.js
+
 navigate to http://localhost:4000/ for the graphQL playground
 
 Example Query 
