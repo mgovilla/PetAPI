@@ -19,9 +19,13 @@
   "homepage": "https://github.com/mgovilla/PetAPI#readme",
   "dependencies": {
     "apollo-server": "^2.25.1",
-    "graphql": "^15.5.0"
+    "autocannon": "^7.3.0",
+    "graphql": "^15.5.0",
+    "graphql-code-generator": "^0.18.2"
   },
   "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "apollo": "^2.33.4",
     "jest": "^27.0.4"
   }
 }
