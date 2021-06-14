@@ -11,7 +11,7 @@ const users = [
     {
         id: 2,
         username: 'customer',
-        username: 'customer',
+        password: 'customer',
         firstName: 'Customer',
         online: false
     }
@@ -50,7 +50,7 @@ const pets = [
     {
         id: 2,
         name: 'James',
-        categories: categories[1],
+        category: categories[1],
         tags: [tags[0]],
         status: 'sold'
     }
@@ -68,6 +68,11 @@ const orders = [
 ];
 
 class UserAPI {
+    // Return a list of all users
+    getUsers() {
+        return users
+    }
+
     // Return the one user
     getUserByID({id}) {
         let f = users.filter(u => u.id == id)
@@ -108,6 +113,7 @@ class UserAPI {
         return user
     }
 
+    // Delete user based on username
     deleteUser({username}) {
         let i = users.findIndex(u => u.username == username)
         if (i == -1) return "User not Found"
@@ -120,10 +126,12 @@ class UserAPI {
 
 class StoreAPI {
 
+    // Return list of all pets
     getInventory() {
         return pets
     }
 
+    // Find order based on id
     getOrderByID({id}) {
         let f = orders.filter(o => o.id == id)
         return f.length == 0 ? null : f[0]
@@ -165,6 +173,7 @@ class StoreAPI {
     }
 
     updatePet({pet}) {
+        console.log(pet)
         let f = pets.filter(p => p.id == pet.id)
         if(f.length == 0) return null
         Object.assign(f[0], pet)
@@ -180,7 +189,9 @@ class StoreAPI {
     }
 
     updatePetStatus({id, name, status}) {
-        return this.updatePet({id, name, status})
+        let pet = {id: id, name: name, status: status};
+        
+        return this.updatePet({pet})
     }
 }
 

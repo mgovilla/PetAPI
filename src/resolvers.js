@@ -1,9 +1,9 @@
-// Resolvers define the technique for fetching the types defined in the
-// schema. This resolver retrieves books from the "books" array above.
+// Resolvers define the technique for fetching the types defined in the schema
 const resolvers = {
     Query: {
         userByID: (_, {id}, {dataSources}) => dataSources.userAPI.getUserByID({id}),
         inventory: (_, __, {dataSources}) => dataSources.storeAPI.getInventory(),
+        users: (_, __, {dataSources}) => dataSources.userAPI.getUsers(),
         orderByID: (_, {id}, {dataSources}) => dataSources.storeAPI.getOrderByID({id}),
         petByStatus: (_, {status}, {dataSources}) => dataSources.storeAPI.getPetsByStatus({status}),
         petByTags: (_, {tags}, {dataSources}) => dataSources.storeAPI.getPetsByTags({tags}),
@@ -20,13 +20,8 @@ const resolvers = {
         createPet: (_, {pet}, {dataSources}) => dataSources.storeAPI.createPet({pet}),
         updatePet: (_, {pet}, {dataSources}) => dataSources.storeAPI.updatePet({pet}),
         deletePet: (_, {id}, {dataSources}) => dataSources.storeAPI.deletePet({id}),
-        updatePetStatus: (_, {id, name, status}, {dataSources}) => dataSources.storeAPI.updatePet({id, name, status})
+        updatePetStatus: (_, {id, name, status}, {dataSources}) => dataSources.storeAPI.updatePetStatus({id, name, status})
     }
   };
 
 module.exports = resolvers;
-
-/* FOR MUTATIONS
-login: (_, {username, password}, {dataSources}) => dataSources.userAPI.authenticate({username, password}),
-logout: (_, {id}, {dataSources}) => dataSources.userAPI.logout({id}),
-*/

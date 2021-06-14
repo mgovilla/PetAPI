@@ -112,6 +112,7 @@ const typeDefs = gql`
 
     type Query {
         userByID(id: ID!): User
+        users: [User]
         inventory: [Pet]
         orderByID(id: ID!): Order
         petByStatus(status: PetStatus!): [Pet]
